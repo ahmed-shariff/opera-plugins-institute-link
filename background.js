@@ -4,6 +4,9 @@ function renameURLToInstitute(){
 	currentWindow: true,
 	active: true
     }, function(tab) {
+
+        // ******************************************************************************
+        // ************************** University of Manitoba ****************************
         var splitURL = tab[0].url.split("/");
         splitURL.forEach(function(val, i){
 	    if (val.endsWith(".org") || val.endsWith(".com")) {
@@ -12,6 +15,14 @@ function renameURLToInstitute(){
             splitURL[i] = val;
         });
         url = splitURL.join("/");
+        // *********************** End of University of Manitoba ************************
+
+        // ******************************************************************************
+        // ************************************* UBCO  **********************************
+        
+        url = "https://go.openathens.net/redirector/ubc.ca?url=" + tab[0].url;
+
+        // ******************************** end UBCO  ***********************************
         
         updateProperties = new Object();
         updateProperties.url = url;
