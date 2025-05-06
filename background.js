@@ -30,7 +30,7 @@ function renameURLToInstitute(){
     });
 }
 
-chrome.browserAction.onClicked.addListener(renameURLToInstitute);
+chrome.action.onClicked.addListener(renameURLToInstitute);
 
 chrome.commands.onCommand.addListener(function(command) {
     if (command == 'rename-url') {
